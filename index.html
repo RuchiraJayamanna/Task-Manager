@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Task Manager </title>
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	<body>
+		<h1>Task Manager</h1>
+		
+		<h3>Create Your Task</h3>
+		
+		<!--Form to Add Tasks-->
+		<form action="create.php" method="post"> 
+			<!--UserName-->
+			<label for="username"> User Name </label>
+			<input type ="text" name="username" required>
+			<br>
+			<!--Task Title-->
+			<label for ="title">Task Title </label>
+			<input type ="text" name="title" required>
+			<br>
+			<!--Task Description-->
+			<label for="description"> Task Description </label>
+			<textarea name="description" required></textarea>
+			<br>
+			<!--Date-->
+			<label for="date">Date </label>
+			<input type="date" name="date" required>
+			<br>
+			<input type="submit" value="Create Task">
+		</form>
+		
+		<!--List of Tasks-->
+		<h3>List of Tasks</h3>
+		<div id="task-list">
+			<?php include 'read.php'; ?>
+		</div>
+		
+		<h3> Update Your Task</h3>
+		<!--Form to Update Tasks-->
+		<form action="update.php" method="post">
+			<!--Task ID to Update-->
+			<label for="task_id"> Task ID To Update </label>
+			<input type ="text" name="task_id" required>
+			<br>
+			<!--Update UserName-->
+			<label for="new_username"> Update Username </label>
+			<input type ="text" name="new_username" required>
+			<br>
+			<!--Update Task Title-->
+			<label for ="new_title">Update Task Title </label>
+			<input type ="text" name="new_title" required>
+			<br>
+			<!--Update Task Description-->
+			<label for="new_description"> Update Task Description </label>
+			<textarea name="new_description" required></textarea>
+			<br>
+			<!--Update Date-->
+			<label for="new_date">Update Date </label>
+			<input type="date" name="new_date" required>
+			<br>
+			<input type="submit" value="Update Task">	
+		</form>
+		
+		<h3>Delete Your Task</h3>
+		<!--Form to Delete Tasks-->
+		<form action="delete.php" method="post">
+			<label for="task_id"> Task ID To Delete </label>
+			<input type="text" name="task_id" required>
+			<br>
+			<input type="submit" value="Delete Task">
+		</form>
+	</body>
+</html>
